@@ -29,4 +29,11 @@ app.use(express.static("public"))
 app.use(cookieParser())
 
 
+// routes import
+import userRouter from './routes/user.routes.js'
+
+// routes.declaration
+// this will be used as prefix now (/users). eg Register route - http://localhost:8000/api/v1/users/register
+app.use("/api/v1/users", userRouter)
+
 export { app }
